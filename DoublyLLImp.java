@@ -71,6 +71,22 @@ public class DoublyLLImp {
         }
     }
 
+    // Delete last of the doubly Linked List
+    public static Node deleteLastDoubly(Node head){
+        if (head == null) {
+            return head;
+        }
+        if (head.next == null) {
+            return null;
+        }
+        Node curr = head;
+        while (curr.next != null) 
+              curr = curr.next;
+
+        curr.prev.next = null;
+        return head;
+    }
+
     // traverse doubly linked list
 
     public static void printDoubleLl(Node head){
@@ -101,7 +117,10 @@ public class DoublyLLImp {
         // head = ReverseDoublyLL(head);
         // printDoubleLl(head);
 
-        head = deleteHead(head);
+        // head = deleteHead(head);
+        // printDoubleLl(head);
+
+        head = deleteLastDoubly(head);
         printDoubleLl(head);
 
 
