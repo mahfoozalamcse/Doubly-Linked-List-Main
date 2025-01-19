@@ -59,6 +59,18 @@ public class DoublyLLImp {
 
     }
 
+    // Delete head node in the doubly linked list
+    public static Node deleteHead(Node head){
+        if (head == null || head.next == null) {
+            return null;
+        }
+        else{
+            head = head.next;
+            head.prev = null;
+            return head;
+        }
+    }
+
     // traverse doubly linked list
 
     public static void printDoubleLl(Node head){
@@ -86,8 +98,13 @@ public class DoublyLLImp {
         //  head = insertEnd(head, 4);
         //  printDoubleLl(head);
 
-        head = ReverseDoublyLL(head);
+        // head = ReverseDoublyLL(head);
+        // printDoubleLl(head);
+
+        head = deleteHead(head);
         printDoubleLl(head);
+
+
 
     }
 }
