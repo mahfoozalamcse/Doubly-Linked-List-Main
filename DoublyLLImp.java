@@ -123,6 +123,8 @@ public class DoublyLLImp {
         head = deleteLastDoubly(head);
         printDoubleLl(head);
 
+        
+
 
 
     }
