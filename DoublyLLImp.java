@@ -40,6 +40,27 @@ public class DoublyLLImp {
         
     }
 
+    // Reverse the Doubly Linked List 
+    public static Node ReverseDoublyLL(Node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        Node curr = head;
+        Node prev = null;
+        while (curr != null){
+             prev = curr.prev;
+             curr.prev = curr.next;
+             curr.next = prev;
+             curr = curr.prev;
+        }
+
+        return prev.prev;
+
+    }
+
+    // traverse doubly linked list
+
     public static void printDoubleLl(Node head){
         Node temp = head;
         while (temp != null) {
@@ -62,8 +83,11 @@ public class DoublyLLImp {
     //    head = insertBegin(head, 0);
     //    printDoubleLl(head);
 
-         head = insertEnd(head, 4);
-         printDoubleLl(head);
+        //  head = insertEnd(head, 4);
+        //  printDoubleLl(head);
+
+        head = ReverseDoublyLL(head);
+        printDoubleLl(head);
 
     }
 }
